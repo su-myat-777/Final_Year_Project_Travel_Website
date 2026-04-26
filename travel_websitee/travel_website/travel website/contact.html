@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Travel Website</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =================Navbar Fix for Contact Page================ */
+      /* Parent Container - flex layout */
+      header .container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 70px;
+      }
+
+      /* Nav element - stretch to fill available space */
+      nav {
+        display: flex !important;
+        align-items: center !important;
+        flex: 1;
+        height: 100%;
+      }
+
+      nav ul {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+        padding: 0 0.6rem;
+      }
+
+      nav ul li a {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+        text-decoration: none !important;
+      }
+
+      /* Remove underline from links */
+      nav ul li a::after {
+        display: none !important;
+      }
+
+      nav ul li:hover a::after {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      /* Dropdown menu link fix */
+      nav ul li.dropdown .dropdown-menu li a {
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      /* Auth Buttons Container */
+      .auth-buttons {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* Sign Out Button - logged-in state */
+      .signout-btn {
+        height: 34px !important;
+        line-height: 1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 1rem !important;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        border-radius: 20px !important;
+      }
+
+      /* User Greeting - logged-in state */
+      .user-greeting {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 34px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 0.75rem !important;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-radius: 20px !important;
+      }
+
+      /* Hide sign in/sign up buttons - only show logged-in state */
+      .signin-btn,
+      .signup-btn {
+        display: none !important;
+      }
+
+      /* =================Full Width Map Section================ */
+      .contact-map-section {
+        width: 100%;
+        padding: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .map-full-width {
+        width: 100%;
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .map-full-width iframe {
+        display: block;
+        width: 100%;
+        height: 450px;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="index.html" class="logo">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C8.5 2 5.5 5 5.5 8.5C5.5 11 7 13.5 9.5 15L12 22L14.5 15C17 13.5 18.5 11 18.5 8.5C18.5 5 15.5 2 12 2Z"
+                fill="white"
+              />
+              <path
+                d="M12 6C10.5 6 9.5 7 9.5 8.5C9.5 10 10.5 11 12 11C13.5 11 14.5 10 14.5 8.5C14.5 7 13.5 6 12 6Z"
+                fill="#2095ae"
+              />
+              <circle cx="12" cy="8.5" r="1.5" fill="#2095ae" />
+            </svg>
+            <span class="logo-text">TRAVEL</span>
+          </a>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#choose-place">Tours</a></li>
+            <li><a href="index.html#top-destination">Destinations</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"
+                >Pages <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="Tourbooking.html">Tour Booking</a></li>
+                <li><a href="index.html#testimonials">Customer Review</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <!-- Logged-in state: Sign Out + Hello, Su! -->
+          <button id="signout-btn" class="auth-btn signout-btn">
+            Sign Out
+          </button>
+          <span id="user-greeting" class="user-greeting">Hello, Su!</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Sign In</h2>
+        <form id="signin-form">
+          <div class="form-group">
+            <label for="signin-email">Email</label>
+            <input type="email" id="signin-email" required />
+          </div>
+          <div class="form-group">
+            <label for="signin-password">Password</label>
+            <input type="password" id="signin-password" required />
+          </div>
+          <button type="submit" class="modal-btn">Sign In</button>
+        </form>
+        <p class="modal-footer">
+          Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required />
+          </div>
+          <button type="submit" class="modal-btn">Sign Up</button>
+        </form>
+        <p class="modal-footer">
+          Already have an account? <a href="#" id="switch-to-signin">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="contact-page-header">
+      <div class="header-overlay"></div>
+      <div class="container">
+        <div class="header-content">
+          <span class="subtitle">Get In Touch</span>
+          <h1>Contact Us</h1>
+          <p>
+            We'd love to hear from you. Send us a message and we'll respond as
+            soon as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-main-section">
+      <div class="container">
+        <div class="row g-5">
+          <!-- LEFT COLUMN - CONTACT INFO & FORM -->
+          <div class="col-lg-8">
+            <!-- Contact Info Cards -->
+            <div class="contact-info-row">
+              <div class="contact-info-card">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Visit Us</h4>
+                  <p>123 Travel Street<br />Yangon, Myanmar</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Call Us</h4>
+                  <p>+95 123 456 789<br />+95 987 654 321</p>
+                </div>
+              </div>
+
+              <div class="contact-info-card">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-content">
+                  <h4>Email Us</h4>
+                  <p>info@travelwebsite.com<br />support@travelwebsite.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+              <div class="form-header">
+                <h2><i class="fas fa-paper-plane"></i> Send us a Message</h2>
+                <p>
+                  Fill out the form below and we'll get back to you within 24
+                  hours.
+                </p>
+              </div>
+
+              <div
+                id="contact-alert"
+                class="alert alert-success d-none"
+                role="alert"
+              >
+                <i class="fas fa-check-circle"></i> Message sent successfully!
+                We'll contact you soon.
+              </div>
+
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="fas fa-user"></i> Your Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      class="form-input"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      class="form-input"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label><i class="fas fa-phone"></i> Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="form-input"
+                      placeholder="+95 123 456 789"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label><i class="fas fa-tag"></i> Subject</label>
+                    <select name="subject" class="form-input" required>
+                      <option value="" disabled selected>
+                        Select a subject
+                      </option>
+                      <option value="general">General Inquiry</option>
+                      <option value="booking">Booking Support</option>
+                      <option value="feedback">Feedback</option>
+                      <option value="partnership">Partnership</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group full">
+                  <label><i class="fas fa-comment-alt"></i> Your Message</label>
+                  <textarea
+                    name="message"
+                    class="form-input textarea"
+                    rows="5"
+                    placeholder="Tell us what you're looking for..."
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-submit">
+                  <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN - SIDEBAR -->
+          <div class="col-lg-4">
+            <div class="contact-sidebar">
+              <!-- Office Hours -->
+              <div class="sidebar-card hours-card">
+                <div class="card-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h3>Office Hours</h3>
+                <ul class="hours-list">
+                  <li>
+                    <span>Monday - Friday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Saturday</span>
+                    <span>9:00 AM - 2:00 PM</span>
+                  </li>
+                  <li>
+                    <span>Sunday</span>
+                    <span>Closed</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Quick Contact -->
+              <div class="sidebar-card quick-contact-card">
+                <div class="card-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3>Need Immediate Help?</h3>
+                <p>Call our 24/7 support line for urgent inquiries.</p>
+                <a href="tel:+95123456789" class="quick-call-btn">
+                  <i class="fas fa-phone-alt"></i>
+                  +95 123 456 789
+                </a>
+              </div>
+
+              <!-- Social Media -->
+              <div class="sidebar-card social-card">
+                <div class="card-icon">
+                  <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>Follow Us</h3>
+                <p>
+                  Stay connected with us on social media for latest updates and
+                  travel tips.
+                </p>
+                <div class="social-links">
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                  <a href="#" class="social-link"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="contact-map-section">
+      <div class="map-full-width">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6139551.528322523!2d12.712159999999999!3d41.29085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smm!4v1776783492083!5m2!1sen!2smm%22"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="./img/logo-light.png" alt="Logo" />
+          </div>
+          <p>&copy; 2026 Travel Website. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Show success message
+            document.getElementById("contact-alert").classList.remove("d-none");
+
+            // Reset form
+            this.reset();
+
+            // Hide alert after 5 seconds
+            setTimeout(function () {
+              document.getElementById("contact-alert").classList.add("d-none");
+            }, 5000);
+          });
+      });
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

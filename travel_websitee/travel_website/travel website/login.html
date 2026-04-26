@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Travel Website</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="auth-page">
+      <div class="auth-wrapper">
+        <div class="auth-card">
+          <div class="auth-card-header">
+            <div>
+              <p class="auth-pretitle">TravelExplore</p>
+              <h1>Welcome back.</h1>
+              <p class="auth-description">
+                Sign in to continue browsing tours, managing bookings, and
+                unlocking exclusive travel offers.
+              </p>
+            </div>
+          </div>
+
+          <div class="auth-tabs">
+            <button id="show-signin" class="auth-tab active">Sign In</button>
+            <button id="show-signup" class="auth-tab">Sign Up</button>
+          </div>
+
+          <div id="auth-feedback" class="auth-feedback"></div>
+
+          <div id="signin-panel" class="auth-panel active">
+            <form id="signin-form" class="auth-form">
+              <div class="auth-input-group">
+                <label for="signin-email">Email</label>
+                <input type="email" id="signin-email" required />
+              </div>
+              <div class="auth-input-group">
+                <label for="signin-password">Password</label>
+                <input type="password" id="signin-password" required />
+              </div>
+              <button type="submit" class="auth-submit-btn">Sign In</button>
+            </form>
+          </div>
+
+          <div id="signup-panel" class="auth-panel">
+            <form id="signup-form" class="auth-form">
+              <div class="auth-input-group">
+                <label for="signup-name">Full Name</label>
+                <input type="text" id="signup-name" required />
+              </div>
+              <div class="auth-input-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" required />
+              </div>
+              <div class="auth-input-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required />
+              </div>
+              <button type="submit" class="auth-submit-btn">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

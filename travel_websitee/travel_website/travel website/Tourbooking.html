@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour Booking - Travel Website</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Navbar Link Underline Fix */
+      nav ul li a,
+      nav ul li a:hover,
+      nav ul li a:focus,
+      nav ul li a:active {
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      nav ul li a::after {
+        display: none !important;
+      }
+
+      nav ul li:hover a::after {
+        display: none !important;
+        width: 0 !important;
+      }
+
+      /* Dropdown menu link fix */
+      nav ul li.dropdown .dropdown-menu li a {
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+
+      nav ul li.dropdown .dropdown-menu li a:hover {
+        text-decoration: none !important;
+      }
+
+      /* =================Auth Buttons Alignment Fix================ */
+      /* Parent Container - ensure flex and center alignment */
+      header .container {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 70px;
+      }
+
+      /* Nav element - stretch to fill available space */
+      nav {
+        display: flex !important;
+        align-items: center !important;
+        flex: 1;
+        height: 100%;
+      }
+
+      nav ul {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+        padding: 0 0.6rem;
+      }
+
+      nav ul li a {
+        display: flex !important;
+        align-items: center !important;
+        height: 100%;
+      }
+
+      /* Auth Buttons Container - match navbar height */
+      .auth-buttons {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+      }
+
+      /* All Auth Buttons - uniform height and centering */
+      .auth-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 34px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 1rem !important;
+        box-sizing: border-box;
+      }
+
+      /* Sign Out Button - specific fix */
+      .signout-btn {
+        height: 34px !important;
+        line-height: 1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 1rem !important;
+        box-sizing: border-box;
+      }
+
+      /* User Greeting - match button height */
+      .user-greeting {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 34px !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+        padding: 0 0.75rem !important;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="index.html" class="logo">
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C8.5 2 5.5 5 5.5 8.5C5.5 11 7 13.5 9.5 15L12 22L14.5 15C17 13.5 18.5 11 18.5 8.5C18.5 5 15.5 2 12 2Z"
+                fill="white"
+              />
+              <path
+                d="M12 6C10.5 6 9.5 7 9.5 8.5C9.5 10 10.5 11 12 11C13.5 11 14.5 10 14.5 8.5C14.5 7 13.5 6 12 6Z"
+                fill="#2095ae"
+              />
+              <circle cx="12" cy="8.5" r="1.5" fill="#2095ae" />
+            </svg>
+            <span class="logo-text">TRAVEL</span>
+          </a>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#choose-place">Tours</a></li>
+            <li><a href="index.html#top-destination">Destinations</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle"
+                >Pages <i class="fas fa-chevron-down"></i
+              ></a>
+              <ul class="dropdown-menu">
+                <li><a href="Tourbooking.html">Tour Booking</a></li>
+                <li><a href="index.html#testimonials">Customer Review</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <!-- Logged-in state: Sign Out + Hello, Su! -->
+          <button id="signout-btn" class="auth-btn signout-btn">
+            Sign Out
+          </button>
+          <span id="user-greeting" class="user-greeting">Hello, Su!</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Sign In</h2>
+        <form id="signin-form">
+          <div class="form-group">
+            <label for="signin-email">Email</label>
+            <input type="email" id="signin-email" required />
+          </div>
+          <div class="form-group">
+            <label for="signin-password">Password</label>
+            <input type="password" id="signin-password" required />
+          </div>
+          <button type="submit" class="modal-btn">Sign In</button>
+        </form>
+        <p class="modal-footer">
+          Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required />
+          </div>
+          <button type="submit" class="modal-btn">Sign Up</button>
+        </form>
+        <p class="modal-footer">
+          Already have an account? <a href="#" id="switch-to-signin">Sign In</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="booking-page-header">
+      <div class="header-overlay"></div>
+      <div class="container">
+        <div class="header-content">
+          <span class="subtitle">Plan Your Adventure</span>
+          <h1>Book Your Dream Tour</h1>
+          <p>
+            Create unforgettable memories with our curated travel experiences
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOUR CARDS SECTION -->
+    <section class="tours-grid-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Popular Destinations</span>
+          <h2 class="section-title">Explore Our Tours</h2>
+        </div>
+        <div class="tours-grid">
+          <!-- Tour Card 1 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=250&fit=crop"
+                alt="London, UK"
+              />
+              <span class="tour-badge">Best Seller</span>
+              <span class="tour-price">$1,499</span>
+            </div>
+            <div class="tour-content">
+              <h3>London, UK</h3>
+              <p>
+                Explore the historic landmarks and vibrant culture of the
+                British capital.
+              </p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-users"></i> 2+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+          <!-- Tour Card 2 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&h=250&fit=crop"
+                alt="Paris, France"
+              />
+              <span class="tour-badge">Popular</span>
+              <span class="tour-price">$1,699</span>
+            </div>
+            <div class="tour-content">
+              <h3>Paris, France</h3>
+              <p>Experience the romance and iconic art of the City of Light.</p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 4 Days</span>
+                <span><i class="fas fa-users"></i> 2+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+          <!-- Tour Card 3 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&h=250&fit=crop"
+                alt="Santorini, Greece"
+              />
+              <span class="tour-badge">Premium</span>
+              <span class="tour-price">$1,899</span>
+            </div>
+            <div class="tour-content">
+              <h3>Santorini, Greece</h3>
+              <p>
+                Discover the stunning white buildings and breathtaking sunsets
+                over the Aegean Sea.
+              </p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 6 Days</span>
+                <span><i class="fas fa-users"></i> 1+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+          <!-- Tour Card 4 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&h=250&fit=crop"
+                alt="Rome, Italy"
+              />
+              <span class="tour-price">$1,399</span>
+            </div>
+            <div class="tour-content">
+              <h3>Rome, Italy</h3>
+              <p>
+                Journey through ancient history and enjoy authentic Italian
+                cuisine.
+              </p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-users"></i> 2+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+          <!-- Tour Card 5 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1517935706615-2717063c2225?w=400&h=250&fit=crop"
+                alt="Toronto, Canada"
+              />
+              <span class="tour-badge">New</span>
+              <span class="tour-price">$1,599</span>
+            </div>
+            <div class="tour-content">
+              <h3>Toronto, Canada</h3>
+              <p>
+                Experience the multicultural vibe and natural wonders of
+                Ontario.
+              </p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 7 Days</span>
+                <span><i class="fas fa-users"></i> 2+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+          <!-- Tour Card 6 -->
+          <div class="tour-card">
+            <div class="tour-image">
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=250&fit=crop"
+                alt="Dubai, UAE"
+              />
+              <span class="tour-badge">Luxury</span>
+              <span class="tour-price">$2,199</span>
+            </div>
+            <div class="tour-content">
+              <h3>Dubai, UAE</h3>
+              <p>
+                Witness the luxury and futuristic architecture of this desert
+                oasis.
+              </p>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-users"></i> 2+</span>
+              </div>
+              <a href="#" class="tour-btn">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="row g-5">
+          <!-- LEFT COLUMN - BOOKING FORM -->
+          <div class="col-lg-7">
+            <div class="booking-form-card">
+              <div class="form-header">
+                <h2><i class="fas fa-plane-departure"></i> Travel Details</h2>
+                <p>Fill in your travel preferences</p>
+              </div>
+
+              <form id="bookingForm" class="booking-form">
+                <!-- Section 1: Travel Plan -->
+                <div class="form-section">
+                  <h3 class="section-heading">
+                    <span class="section-icon">✈</span>
+                    Your Travel Plan
+                  </h3>
+
+                  <div class="form-grid">
+                    <div class="form-group full">
+                      <label>
+                        <i class="fas fa-map-marker-alt"></i> Destination
+                      </label>
+                      <select name="destination" class="form-input" required>
+                        <option value="" disabled selected>
+                          Where do you want to go?
+                        </option>
+                        <option value="singapore">
+                          🇸🇬 Singapore - The Lion City
+                        </option>
+                        <option value="thailand">
+                          🇹🇭 Thailand - Land of Smiles
+                        </option>
+                        <option value="vietnam">🇻🇳 Vietnam - Hidden Gem</option>
+                        <option value="malaysia">
+                          🇲🇾 Malaysia - Truly Asia
+                        </option>
+                        <option value="indonesia">
+                          🇮🇩 Indonesia - Paradise Islands
+                        </option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>
+                        <i class="fas fa-calendar-check"></i> Check-in Date
+                      </label>
+                      <input
+                        type="date"
+                        name="checkin_date"
+                        class="form-input"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>
+                        <i class="fas fa-calendar-times"></i> Check-out Date
+                      </label>
+                      <input
+                        type="date"
+                        name="checkout_date"
+                        class="form-input"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label> <i class="fas fa-users"></i> Travelers </label>
+                      <select name="travelers" class="form-input" required>
+                        <option value="" disabled selected>
+                          Number of travelers
+                        </option>
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                        <option value="5+">5+ Adults (Group Rate)</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label>
+                        <i class="fas fa-wallet"></i> Budget Level
+                      </label>
+                      <select name="budget" class="form-input" required>
+                        <option value="" disabled selected>
+                          Select your budget
+                        </option>
+                        <option value="standard">
+                          💰 Standard - Comfortable
+                        </option>
+                        <option value="premium">⭐ Premium - Luxury</option>
+                        <option value="luxury">
+                          👑 Luxury - Ultra Premium
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Section 2: Personal Information -->
+                <div class="form-section">
+                  <h3 class="section-heading">
+                    <span class="section-icon">👤</span>
+                    Personal Information
+                  </h3>
+
+                  <!-- Web3Forms Hidden Access Key -->
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="2dcd2301-02be-4370-ab01-d5098b1dcd0c"
+                  />
+
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label> <i class="fas fa-user"></i> Full Name </label>
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-input"
+                        placeholder="Enter your full name"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label>
+                        <i class="fas fa-envelope"></i> Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-input"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label> <i class="fas fa-phone"></i> Phone Number </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        class="form-input"
+                        placeholder="+1 234 567 8900"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label> <i class="fas fa-globe"></i> Country </label>
+                      <input
+                        type="text"
+                        name="country"
+                        class="form-input"
+                        placeholder="Your country"
+                        required
+                      />
+                    </div>
+
+                    <div class="form-group">
+                      <label> <i class="fas fa-city"></i> City </label>
+                      <input
+                        type="text"
+                        name="city"
+                        class="form-input"
+                        placeholder="Your city"
+                      />
+                    </div>
+
+                    <div class="form-group full">
+                      <label>
+                        <i class="fas fa-comment-alt"></i> Special Requests
+                      </label>
+                      <textarea
+                        name="message"
+                        class="form-input textarea"
+                        rows="4"
+                        placeholder="Any special requirements, dietary needs, or preferences?"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                  <button type="submit" class="submit-btn">
+                    <span>Send Booking Request</span>
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN - SIDEBAR -->
+          <div class="col-lg-5">
+            <div class="sidebar">
+              <!-- Why Book With Us -->
+              <div class="sidebar-card why-us">
+                <div class="card-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <h3>Why Book With Us?</h3>
+                <ul class="benefits-list">
+                  <li>
+                    <span class="benefit-icon">✓</span>
+                    <div>
+                      <strong>24/7 Support</strong>
+                      <p>Round-the-clock assistance</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="benefit-icon">✓</span>
+                    <div>
+                      <strong>Best Price Guarantee</strong>
+                      <p>Competitive pricing</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="benefit-icon">✓</span>
+                    <div>
+                      <strong>Expert Local Guides</strong>
+                      <p>Professional expertise</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="benefit-icon">✓</span>
+                    <div>
+                      <strong>Flexible Cancellation</strong>
+                      <p>Free cancellation up to 48h</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact Info -->
+              <div class="sidebar-card contact-info">
+                <div class="card-icon">
+                  <i class="fas fa-headset"></i>
+                </div>
+                <h3>Need Help?</h3>
+                <p>Our travel experts are here to assist you</p>
+                <div class="contact-details">
+                  <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+95 912345678</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@travel.com</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                  </div>
+                </div>
+                <a href="contact.html" class="contact-btn">
+                  <i class="fas fa-comments"></i> Chat With Us
+                </a>
+              </div>
+
+              <!-- Testimonial -->
+              <div class="sidebar-card testimonial">
+                <div class="quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">
+                  "Amazing experience! The team helped us plan the perfect trip.
+                  Every detail was taken care of."
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">JD</div>
+                  <div class="author-info">
+                    <strong>John Doe</strong>
+                    <span>Traveler from USA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="./img/logo-light.png" alt="Logo" />
+          </div>
+          <p>&copy; 2026 Travel Website. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("bookingForm");
+
+        // Form submission handler with Web3Forms
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector(".submit-btn");
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML =
+            '<span><i class="fas fa-spinner fa-spin"></i> Sending...</span>';
+          submitBtn.disabled = true;
+
+          try {
+            const formData = new FormData(form);
+
+            // Add required Web3Forms fields
+            formData.append("subject", "New Tour Booking Request");
+            formData.append("from_name", "Travel Website Booking");
+            formData.append("botcheck", "");
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+              alert(
+                "Thank you for your booking request! We will contact you within 24 hours.",
+              );
+              form.reset();
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          } catch (error) {
+            alert("Error submitting form. Please try again.");
+            console.error("Error:", error);
+          } finally {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          }
+        });
+
+        // Add smooth scroll effect
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      // Pre-fill form from URL parameters
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const destination = params.get("destination");
+        const duration = params.get("duration");
+
+        if (destination) {
+          const destSelect = document.querySelector(
+            'select[name="destination"]',
+          );
+          if (destSelect) {
+            destSelect.value = destination;
+          }
+        }
+
+        if (duration) {
+          const durSelect = document.querySelector('select[name="travelers"]');
+          if (durSelect) {
+            // Map duration values to traveler options
+            const durationMap = {
+              "3days": "1",
+              "5days": "2",
+              "7days": "3",
+            };
+            if (durationMap[duration]) {
+              durSelect.value = durationMap[duration];
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
