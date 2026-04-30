@@ -47,6 +47,18 @@
       }
 
       /* Dropdown menu link fix */
+      nav ul li.dropdown .dropdown-menu {
+        height: auto;
+        min-height: max-content;
+        overflow: visible;
+        display: block;
+        padding-bottom: 10px;
+      }
+
+      nav ul li.dropdown .dropdown-menu li {
+        display: block;
+      }
+
       nav ul li.dropdown .dropdown-menu li a {
         text-decoration: none !important;
         border-bottom: none !important;
@@ -179,9 +191,21 @@
                 >Pages <i class="fas fa-chevron-down"></i
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="Tourbooking.html">Tour Booking</a></li>
-                <li><a href="index.html#testimonials">Customer Review</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
+                <li>
+                  <a href="Tourbooking.html"
+                    ><i class="fas fa-calendar-alt"></i> Tour Booking</a
+                  >
+                </li>
+                <li>
+                  <a href="index.html#testimonials"
+                    ><i class="fas fa-star"></i> Customer Review</a
+                  >
+                </li>
+                <li>
+                  <a href="Gallery.html"
+                    ><i class="fas fa-images"></i> Gallery</a
+                  >
+                </li>
               </ul>
             </li>
             <li><a href="contact.html">Contact</a></li>
@@ -434,19 +458,11 @@
                         <option value="" disabled selected>
                           Where do you want to go?
                         </option>
-                        <option value="singapore">
-                          🇸🇬 Singapore - The Lion City
-                        </option>
-                        <option value="thailand">
-                          🇹🇭 Thailand - Land of Smiles
-                        </option>
-                        <option value="vietnam">🇻🇳 Vietnam - Hidden Gem</option>
-                        <option value="malaysia">
-                          🇲🇾 Malaysia - Truly Asia
-                        </option>
-                        <option value="indonesia">
-                          🇮🇩 Indonesia - Paradise Islands
-                        </option>
+                        <option value="singapore">London, UK</option>
+                        <option value="thailand">Paris, France</option>
+                        <option value="vietnam">Rome, Italy</option>
+                        <option value="malaysia">Santorini, Greece</option>
+                        <option value="indonesia">Toronto, Canada</option>
                       </select>
                     </div>
 
@@ -770,6 +786,13 @@
         });
       });
     </script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/booking.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/script.js"></script>
     <script>
