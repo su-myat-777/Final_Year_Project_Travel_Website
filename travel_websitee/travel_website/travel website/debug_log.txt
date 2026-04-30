@@ -1,0 +1,28 @@
+[2026-04-30 05:35:18] Received POST: Array
+(
+)
+
+[2026-04-30 05:35:18] Not a POST request
+[2026-04-30 06:27:50] Request Method: POST
+[2026-04-30 06:27:50] Received POST: Array
+(
+    [name] => Su Myat
+    [email] => sumyat592021@gmail.com
+    [phone] => 09971772777
+    [subject] => partnership
+    [message] => h
+)
+
+[2026-04-30 06:27:50] Received GET: Array
+(
+)
+
+[2026-04-30 06:27:50] Parsed data - name: Su Myat, email: sumyat592021@gmail.com, phone: 09971772777, subject: partnership
+[2026-04-30 06:27:50] Database connected successfully
+[2026-04-30 06:27:50] Server info: 10.4.32-MariaDB
+[2026-04-30 06:27:50] SQL: INSERT INTO contacts (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)
+[2026-04-30 06:27:50] Values - name: 'Su Myat', email: 'sumyat592021@gmail.com', phone: '09971772777', subject: 'partnership', message: 'h...'
+[2026-04-30 06:27:50] Statement prepared successfully
+[2026-04-30 06:27:50] Parameters bound successfully
+[2026-04-30 06:27:50] Data inserted successfully. Insert ID: 1
+[2026-04-30 06:27:50] Affected rows: 1
