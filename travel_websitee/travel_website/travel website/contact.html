@@ -78,9 +78,25 @@
       }
 
       /* Dropdown menu link fix */
+      nav ul li.dropdown .dropdown-menu {
+        height: auto;
+        min-height: max-content;
+        overflow: visible;
+        display: block;
+        padding-bottom: 10px;
+      }
+
+      nav ul li.dropdown .dropdown-menu li {
+        display: block;
+      }
+
       nav ul li.dropdown .dropdown-menu li a {
         text-decoration: none !important;
         border-bottom: none !important;
+      }
+
+      nav ul li.dropdown .dropdown-menu li a:hover {
+        text-decoration: none !important;
       }
 
       /* Auth Buttons Container */
@@ -188,9 +204,21 @@
                 >Pages <i class="fas fa-chevron-down"></i
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="Tourbooking.html">Tour Booking</a></li>
-                <li><a href="index.html#testimonials">Customer Review</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
+                <li>
+                  <a href="Tourbooking.html"
+                    ><i class="fas fa-calendar-alt"></i> Tour Booking</a
+                  >
+                </li>
+                <li>
+                  <a href="index.html#testimonials"
+                    ><i class="fas fa-star"></i> Customer Review</a
+                  >
+                </li>
+                <li>
+                  <a href="Gallery.html"
+                    ><i class="fas fa-images"></i> Gallery</a
+                  >
+                </li>
               </ul>
             </li>
             <li><a href="contact.html" class="active">Contact</a></li>
@@ -327,7 +355,12 @@
                 We'll contact you soon.
               </div>
 
-              <form id="contact-form" class="contact-form">
+              <form
+                id="contact-form"
+                class="contact-form"
+                action="http://localhost/TRAVEL_WEBSITEE/contact-handler.php"
+                method="POST"
+              >
                 <div class="form-row">
                   <div class="form-group">
                     <label><i class="fas fa-user"></i> Your Name</label>
@@ -507,27 +540,12 @@
     </footer>
 
     <!-- JS -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
+    <!-- Firebase SDK -->
 
-            // Show success message
-            document.getElementById("contact-alert").classList.remove("d-none");
-
-            // Reset form
-            this.reset();
-
-            // Hide alert after 5 seconds
-            setTimeout(function () {
-              document.getElementById("contact-alert").classList.add("d-none");
-            }, 5000);
-          });
-      });
-    </script>
-    <script src="js/auth.js"></script>
+    <!-- Custom JS -->
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/contact.js"></script>
+    <script type="module" src="js/auth.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
