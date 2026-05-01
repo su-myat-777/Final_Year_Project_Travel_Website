@@ -514,6 +514,15 @@
       .gallery-item:nth-child(9) {
         animation-delay: 0.9s;
       }
+      .gallery-item:nth-child(10) {
+        animation-delay: 1s;
+      }
+      .gallery-item:nth-child(11) {
+        animation-delay: 1.1s;
+      }
+      .gallery-item:nth-child(12) {
+        animation-delay: 1.2s;
+      }
 
       /* Responsive */
       @media (max-width: 1200px) {
@@ -644,9 +653,21 @@
                 >Pages <i class="fas fa-chevron-down"></i
               ></a>
               <ul class="dropdown-menu">
-                <li><a href="Tourbooking.html">Tour Booking</a></li>
-                <li><a href="index.html#testimonials">Customer Review</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
+                <li>
+                  <a href="Tourbooking.html"
+                    ><i class="fas fa-calendar-alt"></i> Tour Booking</a
+                  >
+                </li>
+                <li>
+                  <a href="index.html#testimonials"
+                    ><i class="fas fa-star"></i> Customer Review</a
+                  >
+                </li>
+                <li>
+                  <a href="Gallery.html"
+                    ><i class="fas fa-images"></i> Gallery</a
+                  >
+                </li>
               </ul>
             </li>
             <li><a href="contact.html">Contact</a></li>
@@ -863,6 +884,66 @@
               <p>Trail adventure</p>
             </div>
           </div>
+
+          <!-- Additional Beach Image -->
+          <div class="gallery-item beaches" data-category="beaches">
+            <img
+              src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800"
+              alt="Bora Bora"
+            />
+            <div class="gallery-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+            <div class="gallery-overlay">
+              <h3>Bora Bora</h3>
+              <p>French Polynesia</p>
+            </div>
+          </div>
+
+          <!-- Additional Mountain Image -->
+          <div class="gallery-item mountains" data-category="mountains">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800"
+              alt="Patagonia"
+            />
+            <div class="gallery-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+            <div class="gallery-overlay">
+              <h3>Patagonia</h3>
+              <p>Argentine Andes</p>
+            </div>
+          </div>
+
+          <!-- Additional City Image -->
+          <div class="gallery-item cities" data-category="cities">
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800"
+              alt="Dubai"
+            />
+            <div class="gallery-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+            <div class="gallery-overlay">
+              <h3>Dubai UAE</h3>
+              <p>Future skyline</p>
+            </div>
+          </div>
+
+          <!-- Additional Adventure Image -->
+          <div class="gallery-item adventure" data-category="adventure">
+            <img
+              src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800"
+              alt="Camping"
+            />
+            <div class="gallery-icon">
+              <i class="fas fa-expand"></i>
+            </div>
+            <div class="gallery-overlay">
+              <h3>Wilderness Camping</h3>
+              <p>Nature escape</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -910,42 +991,76 @@
     </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="index-footer" class="home-footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-section about">
-            <h3>About TravelExplore</h3>
+        <div class="footer-main">
+          <!-- About Column -->
+          <div class="footer-about">
+            <div class="footer-logo">Travel<span>Explore</span></div>
             <p>
               Your trusted partner for unforgettable travel experiences around
-              the world.
+              the world. We help you discover amazing destinations.
             </p>
-            <div class="social-links">
+            <div class="social-icons">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
           </div>
-          <div class="footer-section links">
+
+          <!-- Quick Links Column -->
+          <div class="footer-links">
             <h3>Quick Links</h3>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="search.html">Destinations</a></li>
-              <li><a href="Tourbooking.html">Tours</a></li>
+              <li><a href="index.html#top-destination">Destinations</a></li>
+              <li><a href="index.html#choose-place">Tours</a></li>
+              <li><a href="Gallery.html">Gallery</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
-          <div class="footer-section contact">
+
+          <!-- Services/Contact Column -->
+          <div class="footer-services">
             <h3>Contact Info</h3>
-            <ul>
-              <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street</li>
-              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-              <li><i class="fas fa-envelope"></i> info@travelexplore.com</li>
+            <ul class="contact-info-list">
+              <li>
+                <i class="fas fa-phone-alt"></i>
+                <span>+1 234 567 890</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@travelexplore.com</span>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Travel Street, USA</span>
+              </li>
             </ul>
           </div>
+
+          <!-- Newsletter Column -->
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to our monthly newsletter to stay informed about travel
+              and tours.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
         </div>
-        <div class="footer-bottom">
+
+        <!-- Copyright Section -->
+        <div class="footer-copyright">
           <p>&copy; 2026 TravelExplore. All rights reserved.</p>
+          <div class="copyright-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
